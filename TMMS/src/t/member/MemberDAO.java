@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import t.depart.DepartDAO;
 import t.depart.DepartDTO;
 
-public class MemberDAO  extends DepartDAO{
-	private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+public class MemberDAO extends DepartDAO {
+	private final String DRIVER ="oracle.jdbc.OracleDriver";
 	private final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private final String USER = "ca";
 	private final String PASSWORD = "ca";
@@ -24,7 +24,7 @@ public class MemberDAO  extends DepartDAO{
 	}
 
 	/** List Start **/
-	
+
 	public ArrayList<MemberDTO> memberList() throws Exception {
 		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		Connection conn = null;
@@ -66,10 +66,11 @@ public class MemberDAO  extends DepartDAO{
 		}
 		return list;
 	}
+
 	/** List End **/
 
 	/** Read Start **/
-	
+
 	public MemberDTO memberRead(String point, Object target) {
 		MemberDTO dto = null;
 		Connection conn = null;
@@ -133,25 +134,26 @@ public class MemberDAO  extends DepartDAO{
 		}
 		return flag;
 	}
+
 	/** Read End **/
 	/** Create Start **/
-	
-	/** Create End**/
+
+	/** Create End **/
 	/** Update Start **/
-	
+
 	public void memberUpdate(MemberDTO dto) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "";
 		sql = "update member set name=?,age=?,did=? where id=?";
 		try {
-				conn = DriverManager.getConnection(URL, USER, PASSWORD);
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, dto.getName());
-				pstmt.setInt(2, dto.getAge());
-				pstmt.setInt(3, dto.getDid());
-				pstmt.setString(4, dto.getId());
-				pstmt.executeUpdate();
+			conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getName());
+			pstmt.setInt(2, dto.getAge());
+			pstmt.setInt(3, dto.getDid());
+			pstmt.setString(4, dto.getId());
+			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -167,9 +169,39 @@ public class MemberDAO  extends DepartDAO{
 			}
 		}
 	}
+
 	/** Update End **/
-	
+
 	/** Delete Start **/
-	
+
+	public void memberDelete(String target) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete from member where id=?";
+		try {
+			conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, target);
+			int i=pstmt.executeUpdate();
+			if(i==1) {
+				System.out.println("아이디:"+target+"(을)를삭제를 성공했습니다.");
+			}else {
+				System.out.println("아이디:"+target+"(을)를삭제를 실패했습니다.");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
 	/** Delete End **/
 }

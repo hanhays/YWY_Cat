@@ -9,3 +9,4 @@ insert into depart values((select nvl(max(did),0)+1 from DEPART),'Á¤±ÔÁ÷');
 select * from DEPART
 
 
+
