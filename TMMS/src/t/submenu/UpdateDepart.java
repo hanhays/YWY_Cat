@@ -8,7 +8,7 @@ public class UpdateDepart implements UpdateCommand {
 	}
 	@Override
 	public void execute(Scanner sc, Object target)   throws Exception{
-		System.out.println("dnameÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("dname(ì„)ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		String dname = sc.nextLine();
 		MemberDAO dao = new MemberDAO();
 		dao.Departupdate(dname, (Integer) target);

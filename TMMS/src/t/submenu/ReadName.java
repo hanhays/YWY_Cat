@@ -15,26 +15,26 @@ public class ReadName implements ReadCommand {
 	@Override
 	public void execute(Scanner sc) throws Exception {
 
-		System.out.println("Name¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("Nameë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		String target = sc.nextLine();
 		
 		
 		MemberDAO dao = new MemberDAO();
 		if (dao.idDuplicate("name",target)) {
 			MemberDTO dto = dao.memberRead("name",target);
-			System.out.println("¾ÆÀÌµğ\tÀÌ¸§\t³ªÀÌ\tºÎ¼­¸í");
+			System.out.println("ì•„ì´ë””\tì´ë¦„\të‚˜ì´\të¶€ì„œëª…");
 			System.out.print(dto.getId() + "\t");
 			System.out.print(dto.getName() + "\t");
 			System.out.print(dto.getAge() + "\t");
 			System.out.print(new DepartDAO().getDname(dto.getDid()) + "\n");
 		} else {
-			System.out.println(target + "(Àº)´Â ¾ø´Â NameÀÔ´Ï´Ù.");
+			System.out.println(target + "(ì€)ëŠ” ì—†ëŠ” Nameì…ë‹ˆë‹¤.");
 		}
 
 	}
 	@Override
 	public String toString() {
-		return "ÀÌ¸§À¸·ÎÁ¶È¸";
+		return "ì´ë¦„ìœ¼ë¡œì¡°íšŒ";
 	}
 
 }

@@ -16,19 +16,19 @@ public class Update implements Command {
 		
 		UpdateCommand[] uc = { new UpdateMember(), new UpdateDepart() };
 		
-		System.out.println("1¹ø:È¸¿øÁ¤º¸¼öÁ¤ 2¹ø:ºÎ¼­Á¤º¸¼öÁ¤ 3¹ø:ÃÊ±âÈ­¸é");
+		System.out.println("1ë²ˆ:íšŒì›ì •ë³´ìˆ˜ì • 2ë²ˆ:ë¶€ì„œì •ë³´ìˆ˜ì • 3ë²ˆ:ì´ˆê¸°í™”ë©´");
 		
 		int menu = Integer.parseInt(sc.nextLine()) - 1;
-		String msg=menu==0?"¾ÆÀÌµğ":"ºÎ¼­¹øÈ£";
-		System.out.println("¼öÁ¤ÇÒ "+msg+"¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+		String msg=menu==0?"ì•„ì´ë””":"ë¶€ì„œë²ˆí˜¸";
+		System.out.println("ìˆ˜ì •í•  "+msg+"ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 		if (menu != uc.length) {
 			String target = sc.nextLine();
 			 boolean flag=dao.idDuplicate("id",target);
 			if (flag) {
 				uc[menu = uc.length != menu ? menu : uc.length + 1].execute(sc,target);
 			} else {
-				System.out.println("ÀÔ·ÂÇÏ½Å"+msg+"(Àº)´Â ¾ø½À´Ï´Ù.");
-				System.out.println("1:´Ù½ÃÀÔ·Â 2¹ø:ÃÊ±âÈ­¸é");
+				System.out.println("ì…ë ¥í•˜ì‹ "+msg+"(ì€)ëŠ” ì—†ìŠµë‹ˆë‹¤.");
+				System.out.println("1:ë‹¤ì‹œì…ë ¥ 2ë²ˆ:ì´ˆê¸°í™”ë©´");
 				menu = Integer.parseInt(sc.nextLine());
 				if (menu == 1) {
 					execute(sc);
@@ -37,12 +37,12 @@ public class Update implements Command {
 				}
 			}
 		} else {
-			System.out.println("ÃÊ±âÈ­¸éÀ¸·Î ÀÌµ¿ ÇÕ´Ï´Ù.");
+			System.out.println("ì´ˆê¸°í™”ë©´ìœ¼ë¡œ ì´ë™ í•©ë‹ˆë‹¤.");
 			return;
 		}
 	}
 	public String toString() {
-		return "¼öÁ¤  ";
+		return "ìˆ˜ì •  ";
 	}
 
 }

@@ -15,25 +15,25 @@ public class ReadId implements ReadCommand {
 	@Override
 	public void execute(Scanner sc) throws Exception {
 
-		System.out.println("ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("IDë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		String target = sc.nextLine();
 
 		MemberDAO dao = new MemberDAO();
 		if (dao.idDuplicate("id",target)) {
 			MemberDTO dto = dao.memberRead("id",target);
-			System.out.println("¾ÆÀÌµğ\tÀÌ¸§\t³ªÀÌ\tºÎ¼­¸í");
+			System.out.println("ì•„ì´ë””\tì´ë¦„\të‚˜ì´\të¶€ì„œëª…");
 			System.out.print(dto.getId() + "\t");
 			System.out.print(dto.getName() + "\t");
 			System.out.print(dto.getAge() + "\t");
 			System.out.print(new DepartDAO().getDname(dto.getDid()) + "\n");
 		} else {
-			System.out.println(target + "(Àº)´Â ¾ø´Â IDÀÔ´Ï´Ù.");
+			System.out.println(target + "(ì€)ëŠ” ì—†ëŠ” IDì…ë‹ˆë‹¤.");
 		}
 
 	}
 
 	@Override
 	public String toString() {
-		return "¾ÆÀÌµğ·ÎÁ¶È¸";
+		return "ì•„ì´ë””ë¡œì¡°íšŒ";
 	}
 }

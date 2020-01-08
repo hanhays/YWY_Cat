@@ -19,9 +19,9 @@ public class Delete implements Command{
 			while (flag) {
 				int i=1;
 				for (DeleteCommand nav : dc) {
-					System.out.print(i+"¹ø:"+nav);
+					System.out.print(i+"ë²ˆ:"+nav);
 					i++;
-					if((dc.length+1)==i)System.out.println(i+"¹ø:ÃÊ±âÈ­¸é");
+					if((dc.length+1)==i)System.out.println(i+"ë²ˆ:ì´ˆê¸°í™”ë©´");
 				} 
 				int menu=Integer.parseInt(sc.nextLine())-1;
 				try {
@@ -33,6 +33,6 @@ public class Delete implements Command{
 			}
 	} 
 	public String toString() {
-		return "»èÁ¦  ";
+		return "ï¿½ï¿½ï¿½ï¿½  ";
 	}
 }

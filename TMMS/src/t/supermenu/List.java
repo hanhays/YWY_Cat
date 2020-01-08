@@ -18,7 +18,7 @@ public class List implements Command{
 		ListCommand[] lc= {new ListMember(),new ListDepart(),new ListJoin()};
 		int menu = 0;
 		while (menu != lc.length) {
-			System.out.println("1¹ø:È¸¿øList 2¹ø:ºÎ¼­List 3¹ø:ÅëÇÕList 4¹ø:ÃÊ±âÈ­¸é");
+			System.out.println("1ë²ˆ:íšŒì›List 2ë²ˆ:ë¶€ì„œList 3ë²ˆ:í†µí•©List 4ë²ˆ:ì´ˆê¸°í™”ë©´");
 			menu = Integer.parseInt(sc.nextLine())-1;
 			try {
 				
@@ -31,6 +31,6 @@ public class List implements Command{
 		return;
 	}
 	public String toString(){
-		return "¸®½ºÆ®  ";
+		return "ë¦¬ìŠ¤íŠ¸  ";
 	}
 }

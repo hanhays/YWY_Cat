@@ -5,10 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
 import t.depart.DepartDAO;
-import t.depart.DepartDTO;
-
 public class MemberDAO extends DepartDAO {
 	private final String DRIVER ="oracle.jdbc.OracleDriver";
 	private final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -19,7 +16,7 @@ public class MemberDAO extends DepartDAO {
 		try {
 			Class.forName(DRIVER);
 		} catch (ClassNotFoundException e) {
-			System.out.println("µå¶óÀÌ¹ö ¿¬°á ½ÇÆĞ");
+			System.out.println("ë“œë¼ì´ë²„ ì—°ê²° ì‹¤íŒ¨");
 		}
 	}
 
@@ -184,9 +181,9 @@ public class MemberDAO extends DepartDAO {
 			pstmt.setString(1, target);
 			int i=pstmt.executeUpdate();
 			if(i==1) {
-				System.out.println("¾ÆÀÌµğ:"+target+"(À»)¸¦»èÁ¦¸¦ ¼º°øÇß½À´Ï´Ù.");
+				System.out.println("ì•„ì´ë””:"+target+"(ì„)ë¥¼ì‚­ì œë¥¼ ì„±ê³µí–ˆìŠµë‹ˆë‹¤.");
 			}else {
-				System.out.println("¾ÆÀÌµğ:"+target+"(À»)¸¦»èÁ¦¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+				System.out.println("ì•„ì´ë””:"+target+"(ì„)ë¥¼ì‚­ì œë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

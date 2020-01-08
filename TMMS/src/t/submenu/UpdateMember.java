@@ -11,20 +11,20 @@ public class UpdateMember implements UpdateCommand {
 	}
 	@Override
 	public void execute(Scanner sc, Object target) throws Exception {
-		System.out.println("nameÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("nameì„ ì…ë ¥í•˜ì„¸ìš”.");
 		String name = sc.nextLine();
-		System.out.println("age¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ageë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		int age = Integer.valueOf(sc.nextLine());
 
 		MemberDAO dao = new MemberDAO();
 		// Depart Read
-		System.out.println("Á÷¾÷º¯°æ");
+		System.out.println("ì§ì—…ë³€ê²½");
 		int i=1;
 		for(DepartDTO nav:dao.departList()) {
-			System.out.print(i+"¹ø:"+nav.getDname());
+			System.out.print(i+"ë²ˆ:"+nav.getDname());
 			i++;
 			if(dao.departList().size()+1==i) {
-				System.out.println(i+"¹ø:¾øÀ½");
+				System.out.println(i+"ë²ˆ:ì—†ìŒ");
 			}
 		}
 		int did = Integer.parseInt(sc.nextLine())-1;

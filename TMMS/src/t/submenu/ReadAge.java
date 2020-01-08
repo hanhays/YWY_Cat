@@ -9,23 +9,23 @@ import t.member.MemberDTO;
 public class ReadAge implements ReadCommand {
 	@Override
 	public void execute(Scanner sc) throws Exception {
-		System.out.println("age¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("ageë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		int target = Integer.parseInt(sc.nextLine());
 		MemberDAO dao = new MemberDAO();
 		if (dao.idDuplicate("age",target)) {
 			MemberDTO dto = dao.memberRead("age",target);
-			System.out.println("¾ÆÀÌµğ\tÀÌ¸§\t³ªÀÌ\tºÎ¼­¸í");
+			System.out.println("ì•„ì´ë””\tì´ë¦„\të‚˜ì´\të¶€ì„œëª…");
 			System.out.print(dto.getId() + "\t");
 			System.out.print(dto.getName() + "\t");
 			System.out.print(dto.getAge() + "\t");
 			System.out.print(new DepartDAO().getDname(dto.getDid()) + "\n");
 			}else {
-				System.out.println(target+"»ìÀº ¾ø½À´Ï´Ù.");
+				System.out.println(target+"ì‚´ì€ ì—†ìŠµë‹ˆë‹¤.");
 			}
 	}
 	@Override
 	public String toString() {
-		return "³ªÀÌ·ÎÁ¶È¸";
+		return "ë‚˜ì´ë¡œì¡°íšŒ";
 	}
 
 }

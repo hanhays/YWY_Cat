@@ -19,23 +19,23 @@ public class Read implements Command {
 			int i=1;
 			for (ReadCommand nav : rc) {
 
-				System.out.print(i + "¹ø:" + nav + "  ");
+				System.out.print(i + "ë²ˆ:" + nav + "  ");
 				i++;
 				if (i == rc.length + 1) {
-					System.out.println(i + "¹ø:ÃÊ±âÈ­¸é");
+					System.out.println(i + "ë²ˆ:ì´ˆê¸°í™”ë©´");
 				}
 			} 
 			int menu=Integer.parseInt(sc.nextLine())-1;
 			try {
 				rc[menu=rc.length!=menu? menu:rc.length+1].execute(sc);
 			} catch (Exception e) {
-				System.out.println("ÃÊ±âÈ­¸éÀ¸·Î");
+				System.out.println("ì´ˆê¸°í™”ë©´ìœ¼ë¡œ");
 				flag=false;
 				return;
 			}
 		}
 	}
 	public String toString() {
-		return "Á¶È¸  ";
+		return "ì¡°íšŒ  ";
 	}
 }

@@ -71,7 +71,7 @@ public class DepartDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1,target);
 			rs=pstmt.executeQuery();
-			str=rs.next()?rs.getString("dname"):"∏¡«‘";
+			str=rs.next()?rs.getString("dname"):"ÎßùÌï®";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

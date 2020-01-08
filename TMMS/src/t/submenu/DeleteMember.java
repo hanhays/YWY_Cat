@@ -14,16 +14,16 @@ public class DeleteMember implements DeleteCommand {
 	@Override
 	public void execute(Scanner sc) throws Exception {
 		MemberDAO dao =new MemberDAO();
-		System.out.println("»èÁ¦ÇÏ½Ç ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä."); 
+		System.out.println("ì‚­ì œí•˜ì‹¤ ì•„ì´ë””ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”."); 
 		String target=sc.nextLine();
 		boolean flag=dao.idDuplicate("id", target);
 		if(flag) {
-			System.out.println(target+"(À»)¸¦Á¤¸»·Î »èÁ¦ ÇÏ½Ã°Ú½À´Ï±î?(Y/N)");
+			System.out.println(target+"(ì„)ë¥¼ì •ë§ë¡œ ì‚­ì œ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N)");
 			String choice=sc.nextLine().toUpperCase();
 			if(choice.equals("Y")) {
 				dao.memberDelete(target);
 			}else {
-				System.out.println("1¹ø:´Ù½ÃÀÔ·Â 2¹ø:ÃÊ±âÈ­¸é");
+				System.out.println("1ë²ˆ:ë‹¤ì‹œì…ë ¥ 2ë²ˆ:ì´ˆê¸°í™”ë©´");
 				int menu=Integer.parseInt(sc.nextLine());
 				if(menu==1) {
 					execute(sc);
@@ -32,8 +32,8 @@ public class DeleteMember implements DeleteCommand {
 				}
 			}
 		}else {
-			System.out.println(target+"(Àº)´Â Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
-			System.out.println("1¹ø:´Ù½ÃÀÔ·Â 2¹ø:ÃÊ±âÈ­¸é");
+			System.out.println(target+"(ì€)ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+			System.out.println("1ë²ˆ:ë‹¤ì‹œì…ë ¥ 2ë²ˆ:ì´ˆê¸°í™”ë©´");
 			int menu=Integer.parseInt(sc.nextLine());
 			if(menu==1) {
 				execute(sc);
@@ -43,6 +43,6 @@ public class DeleteMember implements DeleteCommand {
 		}
 	}
 	public String toString() {
-		return "È¸¿ø»èÁ¦  ";
+		return "íšŒì›ì‚­ì œ  ";
 	}
 }
