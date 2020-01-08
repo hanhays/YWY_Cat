@@ -8,10 +8,8 @@ import t.submenu.DeleteDepart;
 import t.submenu.DeleteMember;
 
 public class Delete implements Command{
-
 	public Delete() {
 	}
-
 	@Override
 	public void execute(Scanner sc) throws Exception {
 			DeleteCommand[] dc= {new DeleteMember(),new DeleteDepart()};
@@ -33,6 +31,6 @@ public class Delete implements Command{
 			}
 	} 
 	public String toString() {
-		return "����  ";
+		return "삭제  ";
 	}
 }

@@ -13,5 +13,4 @@ insert into member values('m004','yun',40,0);
 select * from member
 
 select * from DEPART
-
 delete from member where id='m004';

@@ -2,11 +2,18 @@ create table depart(
 did number(3) primary key,
 dname varchar2(20) not null
 )
-insert into depart values(0,'¾øÀ½');
-insert into depart values((select nvl(max(did),0)+1 from DEPART),'ºñÁ¤±ÔÁ÷');
-insert into depart values((select nvl(max(did),0)+1 from DEPART),'Á¤±ÔÁ÷');
 
+insert into depart values(0,'ì—†ìŒ');
+insert into depart values((select nvl(max(did),0)+1 from DEPART),'ë¹„ì •ê·œì§');
+insert into depart values((select nvl(max(did),0)+1 from DEPART),'ì •ê·œì§');
+insert into depart values(100,'ë¹„ê³ ');
 select * from DEPART
+insert ino depart values(3,'ë°±ìˆ˜');
 
+drop table depart
 
+drop table member
 
+delete from member
+
+delete from DEPART
